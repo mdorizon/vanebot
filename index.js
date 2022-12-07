@@ -1,7 +1,7 @@
 const { Client, Collection } = require('discord.js');
 const dotenv = require('dotenv'); dotenv.config();
 const mongoose = require('mongoose')
-const client = new Client({ intents: 513 });
+const client = new Client({ intents: 515 });
 
 mongoose.set('strictQuery', true);
 
