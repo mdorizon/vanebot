@@ -11,7 +11,10 @@ module.exports = {
     name: 'help',
     category: 'utils',
     permissions: ['SEND_MESSAGES'],
-    description: 'Commande help',
+    ownerOnly: false,
+    usage: 'help <command>',
+    examples: ['help', 'help ping'],
+    description: 'Renvoie une liste de commande filtrée par catégorie!',
     async run (client, message, args) {
         if (!args.length) {
             const noArgsEmbed = new MessageEmbed()
@@ -80,7 +83,7 @@ Ne pas inclure ces caractères -> {}, [] et <> dans vos commandes.
         const argsEmbed = new MessageEmbed()
             .setColor('#f54ea7')
             .setTitle(`\`${cmd.name}\``)
-            .setDescription(cmd.description)
+            .setDescription(`${cmd.description ? cmd.description : contextDescription[`${cmd.name}`]}`)
             .setFooter({ text: `Permission(s) requise(s): ${cmd.permissions.join(', ')}` });
 
         return interaction.reply({ embeds: [argsEmbed], ephemeral: true });

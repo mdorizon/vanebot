@@ -7,7 +7,7 @@ module.exports = {
     ownerOnly: false,
     usage: 'ping',
     examples: ['ping'],
-    description: 'Command ping!',
+    description: 'La commande ping renvoie la latence du bot et de l\'API',
     async run (client, message, args) {
         const tryPong = await message.channel.send("On essaye de pong... un instant!");
 
