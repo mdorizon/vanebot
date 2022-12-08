@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'ping',
+    permissions: ['ADMINISTRATOR'],
     description: 'Command ping!',
     async run (client, message, args) {
         const tryPong = await message.channel.send("On essaye de pong... un instant!");
