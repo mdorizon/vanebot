@@ -16,7 +16,7 @@ module.exports = {
 
         message.channel.send({ embeds: [embed] });
     },
-    runSlash (client, interaction) {
+    runInteraction (client, interaction) {
         const embed = new MessageEmbed()
             .setTitle('🏓 Pong!')
             .setThumbnail(client.user.displayAvatarURL())
