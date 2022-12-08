@@ -42,13 +42,13 @@ module.exports = {
 
         if (evtChoices == 'guildMemberAdd') {
             client.emit('guildMemberAdd', interaction.member);
-            interaction.reply({ content: 'Event guildMemberAdd émit!', ephemereal: true });
+            interaction.reply({ content: 'Event guildMemberAdd émit!', ephemeral: true });
         } else if (evtChoices == 'guildCreate') {
             client.emit('guildCreate', interaction.guild);
-            interaction.reply({ content: 'Event guildCreate émit!', ephemereal: true });
+            interaction.reply({ content: 'Event guildCreate émit!', ephemeral: true });
         } else {
             client.emit('guildMemberRemove', interaction.member);
-            interaction.reply({ content: 'Event guildMemberRemove émit!', ephemereal: true });
+            interaction.reply({ content: 'Event guildMemberRemove émit!', ephemeral: true });
         }
     },
 };
