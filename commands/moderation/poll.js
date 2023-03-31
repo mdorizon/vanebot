@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'poll',
-    category: 'utils',
+    category: 'moderation',
     permissions: ['KICK_MEMBERS'],
     ownerOnly: false,
     usage: 'poll [question]',

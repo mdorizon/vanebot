@@ -3,19 +3,17 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'guildMemberRemove',
     once: false,
-    async execute(client, member) {
+    execute(client, member) {
         const embed = new MessageEmbed()
-            .setAuthor({ name: `${member.user.tag} (${member.id})`, iconURL: member.displayAvatarURL() })
-            .setColor('#dc143c')
-            .setDescription(`± Nom d'utilisateur: ${member.displayName}
-            ± Crée le: <t:${parseInt(member.user.createdTimestamp / 1000)}:f> (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>)
-            ± Rejoint le: <t:${parseInt(member.joinedTimestamp / 1000)}:f> (<t:${parseInt(member.joinedTimestamp / 1000)}:R>)
-            ± Quitté le: <t:${parseInt(Date.now() / 1000)}:f> (<t:${parseInt(Date.now() / 1000)}:R>)
+            .setTitle('Dommage de te voir partir 🙁')
+            .setURL('https://vanezia.fr')
+            .setThumbnail(member.displayAvatarURL())
+            .setColor('#ed4245')
+            .setDescription(`**${member.user.username}** est parti de Vanezia !
+            
+            • Nous sommes actuellement ${member.guild.memberCount} membres sur le discord
             `)
-            .setTimestamp()
-            .setFooter({ text: 'L\'utilisateur a quitté!' });
-
-        const logChannel = client.channels.cache.get('1050140471491580097');
-        logChannel.send({ embeds: [embed] });
+            .setFooter({ text: 'Vanezia | Bienvenue' });
+        client.channels.cache.get('969601166646333440').send({ embeds: [embed] });
     },
 };

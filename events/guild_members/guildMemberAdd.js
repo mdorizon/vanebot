@@ -5,16 +5,18 @@ module.exports = {
     once: false,
     async execute(client, member) {
         const embed = new MessageEmbed()
-            .setAuthor({ name: `${member.user.tag} (${member.id})`, iconURL: member.displayAvatarURL() })
-            .setColor('#21ff81')
-            .setDescription(`± Nom d'utilisateur: ${member}
-            ± Crée le: <t:${parseInt(member.user.createdTimestamp / 1000)}:f> (<t:${parseInt(member.user.createdTimestamp / 1000)}:R>)
-            ± Rejoint le: <t:${parseInt(member.joinedTimestamp / 1000)}:f> (<t:${parseInt(member.joinedTimestamp / 1000)}:R>)
+            .setTitle('Bienvenue sur Vanezia 🎉')
+            .setURL('https://vanezia.fr')
+            .setThumbnail(member.displayAvatarURL())
+            .setColor('#2d7d46')
+            .setDescription(`🎉 Bienvenue à toi **${member.user.username}** sur vanezia !
+            
+            • Nous sommes actuellement ${member.guild.memberCount} membres sur le discord
             `)
-            .setTimestamp()
-            .setFooter({ text: 'L\'utilisateur a rejoint!' });
-
-        const logChannel = client.channels.cache.get('1050140471491580097');
+            .setFooter({ text: 'Vanezia | Bienvenue' });
+        const logChannel = client.channels.cache.get('969601166646333440');
         logChannel.send({ embeds: [embed] });
+
+        await member.roles.add('969677422561734837');
     },
 };

@@ -6,9 +6,8 @@ const Logger = require('./utils/Logger');
 
 mongoose.set('strictQuery', true);
 
-client.commands = new Collection();
-
-['CommandUtil', 'EventUtil'].forEach(handler => { require(`./utils/handlers/${handler}`)(client) });
+['commands', 'buttons'].forEach(x => client[x] = new Collection());
+['CommandUtil', 'EventUtil', 'ButtonUtil'].forEach(handler => { require(`./utils/handlers/${handler}`)(client) });
 
 process.on('exit', code => { Logger.client(`Le processus s'est arrêté avec le code: ${code}!`) });
 process.on('uncaughtException', (err, origin) => { Logger.error(`UNCAUGHT_EXCEPTION: ${err}`); console.error(`Origine: ${origin}`); });
