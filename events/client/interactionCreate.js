@@ -17,12 +17,12 @@ module.exports = {
             cmd.runInteraction(client, interaction);
         } else if (interaction.isButton()) {
             const btn = client.buttons.get(interaction.customId);
-            if (!btn) return interaction.reply('Ce boutton n\'existe pas!');
+            if (!btn) return interaction.reply({ content: 'Ce boutton n\'existe pas!', ephemeral: true});
             btn.runInteraction(client, interaction);
 
         } else if (interaction.isSelectMenu()) {
             const selectMenu = client.selects.get(interaction.customId);
-            if (!selectMenu) return interaction.reply('Ce menu n\'existe pas!');
+            if (!selectMenu) return interaction.reply({ content: 'Ce menu n\'existe pas!', ephemeral: true});
             selectMenu.runInteraction(client, interaction);
         }
     },
