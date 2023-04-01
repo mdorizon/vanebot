@@ -20,7 +20,7 @@ module.exports = {
 
         const notifembed = new MessageEmbed()
         .setTitle('NOTIFICATIONS DISCORD')
-        .setColor('#00a3b5')
+        .setColor('#AED6F1')
         .addField('**Reste informé des nouveautés de Vanezia**', `Choisis les notifications que tu souhaite recevoir ! \n\n \`🔧\` Notifications des **mises à jour** \n \`🎈\` Notifications des **évènements** \n\n **Tu peux à tout moment supprimer ou ajouter des notifications, en utilisant le bouton ci-dessous.**`)
         .setFooter({ text: `Vanezia  •  play.vanezia.fr`, iconURL: client.user.displayAvatarURL()});
         
