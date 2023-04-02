@@ -13,7 +13,7 @@ module.exports = {
             
             • Nous sommes actuellement ${member.guild.memberCount} membres sur le discord
             `)
-            .setFooter({ text: 'Vanezia | Bienvenue' });
+            .setFooter({ text: `Vanezia  •  play.vanezia.fr`, iconURL: client.user.displayAvatarURL()});
         client.channels.cache.get('969601166646333440').send({ embeds: [embed] });
     },
 };

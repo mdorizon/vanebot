@@ -24,6 +24,7 @@ module.exports = {
         .addField('**Reste informé des nouveautés de Vanezia**', `Choisis les notifications que tu souhaite recevoir ! \n\n \`🔧\` Notifications des **mises à jour** \n \`🎈\` Notifications des **évènements** \n\n **Tu peux à tout moment supprimer ou ajouter des notifications, en utilisant le bouton ci-dessous.**`)
         .setFooter({ text: `Vanezia  •  play.vanezia.fr`, iconURL: client.user.displayAvatarURL()});
         
-        await interaction.reply({ content: ' ', embeds: [notifembed], components: [buttons] });
+        client.channels.cache.get('1091457399845556384').send({ embeds: [notifembed], components: [buttons]  });
+        await interaction.reply({ content: 'embed de notification bien envoyé !'});
     },
 };
